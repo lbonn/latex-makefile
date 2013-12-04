@@ -1,5 +1,5 @@
 TARGETS = test-glossary.tex
 GLOSSARY = 1
-all: pdf
-
 include ../latex.mk
+
+all: pdf

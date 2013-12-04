@@ -1,7 +1,7 @@
 # disable built-in rules
 .SUFFIXES:
 
-# define latex files to build in TARGET
+# define latex files to build in TARGETS
 
 # parameters
 LATEX ?= latex
