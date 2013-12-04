@@ -1,3 +1,4 @@
-PDF_F = test-simple.pdf
+TARGETS = test-simple.tex
+all: pdf
 
 include ../latex.mk

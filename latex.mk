@@ -1,7 +1,7 @@
 # disable built-in rules
 .SUFFIXES:
 
-# define pdf files to build in PDF_F
+# define latex files to build in TARGET
 
 # parameters
 LATEX ?= latex
@@ -10,24 +10,23 @@ PS2PDF ?= ps2pdf
 MAKEINDEX ?= makeindex
 GLOSSARY ?= 0
 
-TEX_F = $(PDF_F:.pdf=.tex)
-
 # temporary files (for cleaning)
-AUX_F = $(PDF_F:.tex=.aux)
-LOG_F = $(PDF_F:.tex=.log)
-TOC_F = $(PDF_F:.tex=.toc)
-GLO_F = $(PDF_F:.tex=.glo)
-IST_F = $(PDF_F:.tex=.ist)
-GLG_F = $(PDF_F:.tex=.glg)
-GLS_F = $(PDF_F:.tex=.gls)
-OUT_F = $(PDF_F:.tex=.out)
-DVI_F = $(PDF_F:.tex=.dvi)
-PS_F = $(PDF_F:.tex=.ps)
+AUX_F = $(TARGETS:.tex=.aux)
+LOG_F = $(TARGETS:.tex=.log)
+TOC_F = $(TARGETS:.tex=.toc)
+GLO_F = $(TARGETS:.tex=.glo)
+IST_F = $(TARGETS:.tex=.ist)
+GLG_F = $(TARGETS:.tex=.glg)
+GLS_F = $(TARGETS:.tex=.gls)
+OUT_F = $(TARGETS:.tex=.out)
+DVI_F = $(TARGETS:.tex=.dvi)
+PS_F = $(TARGETS:.tex=.ps)
+PDF_F = $(TARGETS:.tex=.pdf)
 
 # rules
-.PHONY: all clean
+.PHONY: clean pdf
 
-all: $(PDF_F)
+pdf: $(PDF_F)
 
 %.aux: %.tex
 	$(LATEX) $<
