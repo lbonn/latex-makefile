@@ -3,7 +3,7 @@
 all: check
 
 check:
-	cd test; make -f make-simple && make -f make-glossary
+	cd test; make
 
 clean:
-	cd test; make -f make-simple clean && make -f make-glossary clean
+	cd test; make clean
