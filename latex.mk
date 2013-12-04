@@ -13,16 +13,16 @@ GLOSSARY ?= 0
 TEX_F = $(PDF_F:.pdf=.tex)
 
 # temporary files (for cleaning)
-AUX_F = $(TEX_F:.tex=.aux)
-LOG_F = $(TEX_F:.tex=.log)
-TOC_F = $(TEX_F:.tex=.toc)
-GLO_F = $(TEX_F:.tex=.glo)
-IST_F = $(TEX_F:.tex=.ist)
-GLG_F = $(TEX_F:.tex=.glg)
-GLS_F = $(TEX_F:.tex=.gls)
-OUT_F = $(TEX_F:.tex=.out)
-DVI_F = $(TEX_F:.tex=.dvi)
-PS_F = $(TEX_F:.tex=.ps)
+AUX_F = $(PDF_F:.tex=.aux)
+LOG_F = $(PDF_F:.tex=.log)
+TOC_F = $(PDF_F:.tex=.toc)
+GLO_F = $(PDF_F:.tex=.glo)
+IST_F = $(PDF_F:.tex=.ist)
+GLG_F = $(PDF_F:.tex=.glg)
+GLS_F = $(PDF_F:.tex=.gls)
+OUT_F = $(PDF_F:.tex=.out)
+DVI_F = $(PDF_F:.tex=.dvi)
+PS_F = $(PDF_F:.tex=.ps)
 
 # rules
 .PHONY: all clean
