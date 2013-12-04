@@ -1,0 +1,4 @@
+PDF_F = test-glossary.pdf
+GLOSSARY = 1
+
+include ../latex.mk
