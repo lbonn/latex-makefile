@@ -47,6 +47,7 @@ ifeq ($(GLOSSARY),1)
 	- $(RM) $(<:.tex=.log) $(<:.tex=.glo) $(<:.tex=.ist) $(<:.tex=.glg)
 else
 %.dvi: %.tex %.aux %.toc
+	$(LATEX) $<
 	- $(RM) $(<:.tex=.log)
 endif
 
