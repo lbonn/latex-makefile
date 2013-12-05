@@ -7,6 +7,7 @@
 LATEX ?= latex
 DVIPS ?= dvips
 PS2PDF ?= ps2pdf
+PS2EPS ?= ps2epsi
 MAKEINDEX ?= makeindex
 GLOSSARY ?= 0
 
@@ -24,9 +25,7 @@ PS_F = $(TARGETS:.tex=.ps)
 PDF_F = $(TARGETS:.tex=.pdf)
 
 # rules
-.PHONY: clean pdf
-
-pdf: $(PDF_F)
+.PHONY: clean
 
 %.aux: %.tex
 	$(LATEX) $<
@@ -52,6 +51,9 @@ endif
 
 %.ps: %.dvi
 	$(DVIPS) $<
+
+%.eps: %.ps
+	$(PS2EPS) $< $@
 
 %.pdf: %.ps
 	$(PS2PDF) $<

@@ -1,4 +1,4 @@
 TARGETS = test-simple.tex
-include ../latex.mk
+all: $(TARGETS:.tex=.pdf)
 
-all: pdf
+include ../latex.mk
