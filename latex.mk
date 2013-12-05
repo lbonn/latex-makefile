@@ -30,6 +30,9 @@ PDF_F = $(TARGETS:.tex=.pdf)
 %.aux: %.tex
 	$(LATEX) $<
 
+%.out: %.tex
+	$(LATEX) $<
+
 %.toc: %.tex
 	$(LATEX) $<
 
@@ -40,11 +43,11 @@ PDF_F = $(TARGETS:.tex=.pdf)
 	$(MAKEINDEX) $< -s $(<:.glo=.ist) -t $(<:.glo=.glg) -o $(<:.glo=.gls)
 
 ifeq ($(GLOSSARY),1)
-%.dvi: %.tex %.gls %.aux %.toc
+%.dvi: %.tex %.gls %.aux %.out %.toc
 	$(LATEX) $<
 	- $(RM) $(<:.tex=.log) $(<:.tex=.glo) $(<:.tex=.ist) $(<:.tex=.glg)
 else
-%.dvi: %.tex %.aux %.toc
+%.dvi: %.tex %.aux %.out %.toc
 	$(LATEX) $<
 	- $(RM) $(<:.tex=.log)
 endif
